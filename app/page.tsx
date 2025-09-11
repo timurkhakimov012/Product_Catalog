@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./paje.module.css";
 import Logo from "../components/logo/Logo";
 import Card from "@/components/card/Card";
+import SidebarCategories from "@/components/sidebarCategories/SidebarCategories";
 import products from "@/data/product";
 
 export default function Home() {
@@ -19,12 +20,13 @@ export default function Home() {
       </header>
 
       <main className={styles["main"]}>
-        <div className={styles["main__sideBar"]}>sideBar</div>
+
+        <div className={styles["main__sideBar"]}>
+          <SidebarCategories/>
+        </div>
+
         <div className={styles["main__content"]}>
-
-
           <div className={styles["main__products-grid"]}>
-
             {products.map((product) => (
               <Card key={product.id} {...product} />
             ))}
