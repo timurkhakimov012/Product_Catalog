@@ -1,4 +1,4 @@
-import styles from "./style.module.css";
+import styles from "./logo.module.css";
 import Image from "next/image";
 
 const Logo = () => {
