@@ -27,3 +27,10 @@
 .main__content {
     flex: 1;
 }
+
+.main__products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 32px 24px;
+
+}
