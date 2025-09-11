@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./paje.module.css";
 import Logo from "../components/logo/Logo";
 import Card from "@/components/card/Card";
+import products from "@/data/product";
 
 export default function Home() {
   return (
@@ -23,33 +24,10 @@ export default function Home() {
 
 
           <div className={styles["main__products-grid"]}>
-            <Card
-              title="Classic Monochrome Tees"
-              image="/products/01.png"
-              price={35}
-              status="in stock"
-            />
 
-            <Card
-              title="Classic Monochrome Tees"
-              image="/products/02.png"
-              price={35}
-              status="in stock"
-            />
-
-            <Card
-              title="Classic Monochrome Tees"
-              image="/products/03.png"
-              price={35}
-              status="in stock"
-            />
-
-            <Card
-              title="Classic Monochrome Tees"
-              image="/products/04.png"
-              price={35}
-              status="in stock"
-            />
+            {products.map((product) => (
+              <Card key={product.id} {...product} />
+            ))}
           </div>
 
 
