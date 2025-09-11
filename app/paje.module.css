@@ -1,3 +1,13 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    margin-top: auto;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -5,3 +15,15 @@
     padding: 16px 0;
 }
 
+.main {
+    display: flex;
+    gap: 16px;
+}
+
+.main__sideBar {
+    width: 200px;
+}
+
+.main__content {
+    flex: 1;
+}

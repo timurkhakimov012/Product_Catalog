@@ -4,7 +4,7 @@ import Logo from "../components/logo/Logo";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className={`${styles["main-page"]} container`}>
 
       <header className={styles["header"]}>
         <div className={styles["header__logo"]}>
@@ -21,8 +21,8 @@ export default function Home() {
          <div className={styles["main__content"]}>Content</div>
       </main>
 
-      <footer>
-        <h3>footer</h3>
+      <footer className={styles["footer"]}>
+        <h3 className={styles["footer__text"]}>footer</h3>
       </footer>
 
     </div>
