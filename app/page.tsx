@@ -1,11 +1,22 @@
-import Image from "next/image";
-import styles from "./paje.module.css";
+'use client'
+import { useState } from "react";
+import styles from "./page.module.css";
 import Logo from "../components/logo/Logo";
 import Card from "@/components/card/Card";
 import SidebarCategories from "@/components/sidebarCategories/SidebarCategories";
-import products from "@/data/product";
 
-export default function Home() {
+export default async function Home() {
+
+  const [filter, setFilter] = useState({
+    category: [],
+    color: [],
+    size: [],
+    price: [null, null]
+  });
+
+  const products = await fetch('http://localhost:3050/products/')
+    .then((res) => res.json());
+
   return (
     <div className={`${styles["main-page"]} container`}>
 
@@ -22,7 +33,7 @@ export default function Home() {
       <main className={styles["main"]}>
 
         <div className={styles["main__sideBar"]}>
-          <SidebarCategories/>
+          <SidebarCategories filter={filter} setFilter={setFilter}/>
         </div>
 
         <div className={styles["main__content"]}>
